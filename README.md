@@ -1,7 +1,7 @@
-#Section Samples
+# Section Samples
 
 
-##wine-list
+## wine-list
 [https://www.wanderandivy.com/wines/](https://www.wanderandivy.com/wines/)
 
 This is a nice little Wordpress site for a wine retailer.
@@ -15,7 +15,7 @@ The design called for a 'disruption' within the loop of single wine sections, wh
 `single-wine.php` is the template being called for each single wine section on the archive page.
 
 
-##tin-animation
+## tin-animation
 [https://stello.us/](https://stello.us/)
 
 This Shopify site for a CBD mint retailer has a lot of fun details, and was a lot of fun to build.
