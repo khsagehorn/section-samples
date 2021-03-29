@@ -1,2 +1,2 @@
 # section-samples
-A collection of sections I'm happy with.
+A collection of things I'm happy with.
