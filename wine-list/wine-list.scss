@@ -1,0 +1,93 @@
+.wine-archive{
+  .super-jumbo{
+    margin: .25em auto .5em;
+  }
+  .nav-outer{
+    background-color: $sauvignon-light;
+    position: relative;
+    &:after{
+      content: '';
+      position: absolute;
+      width: 100%;
+      background-color: $white;
+      z-index: 0;
+      left: 0;
+      top: 0;
+      height: 7.125em;
+    }
+  }
+  .wine-nav-copy{
+    text-align: center;
+    padding: 4em 0em 2em;
+    p{
+      font-size: 2rem;
+    }
+    .btn{
+      margin-top: 2em;
+      font-style: normal;
+    }
+  }
+  @include media-breakpoint-up(md){
+    .wine-nav-copy{
+      padding: 6em 5em 4em;
+    }
+  }
+}
+
+.wine-nav{
+  justify-content: center;
+  .wine-btn{
+    position: relative;
+    flex: 1 0 45%;
+    &:after{
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+    }
+  }
+  .animal{
+    width: 75%;
+    max-width: 12em;
+    margin: 0 auto;
+    z-index: 2;
+  }
+  a{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    color: $black;
+  }
+  .h3{
+    position: absolute;
+    font-size: 1.125rem;
+    width: 100%;
+    top: 82%;
+    z-index: 2;
+
+  }
+  @include media-breakpoint-up(md){
+    flex-wrap: nowrap;
+    .background{
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      left: 0;
+      top: 0;
+      z-index: 1;
+      transform: scale(0);
+      transition: transform .3s ease;
+    }
+    .wine-btn{
+      flex: 1 0 10%;
+      max-width: 15em;
+    }
+    a:hover{
+      .background{
+        transform: scale(1.2);
+        box-shadow: 0px 2px 7px -2px rgba(0,0,0,0.2);
+      }
+    }
+  }
+}
