@@ -1,0 +1,331 @@
+/* != MX-Panel
+-------------------------------------------------------------- */
+.mx-panel-sec{
+    padding: 12em 0 5em;
+    position: relative;
+    overflow: hidden;
+    .container-fluid{
+        padding: 0;
+        .panel-content{
+            @media (max-width: 768px){
+                padding: 0 2em;
+            }
+        }
+    }
+    .panel-image{
+        padding: 2em 0;
+        &.borderline{
+            border-image: url('../img/lines/Image-Border-Responsive.png') 20 round;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+        }
+        svg{
+            position: absolute;
+        }
+        @include media-breakpoint-up(md){
+            padding: 0;
+        }
+    }
+    @include media-breakpoint-up(md) {
+    	display:flex;
+    	align-items:stretch;
+    	// min-height:35em;
+    }
+    @include media-breakpoint-up(lg){
+        &.negative-margin-top{
+            margin-top: -13em;
+        }
+    }
+    @media (min-width: 1800px){
+        &.negative-margin-top{
+            margin-top: -22em;
+        }
+    }
+  @media (min-width: 768px) and (max-width: 992px){
+    min-height: 35em;
+  }
+	&--2-col{
+		.mx-panel{
+			width:100%;
+			@include media-breakpoint-up(md) {
+				width:50%;
+			}
+		}
+	}
+	.panel-content{
+		margin-top: 6em;
+		.heading{
+			margin-bottom: 1em;
+
+		}
+	}
+	.panel-image{
+		svg{
+			position: absolute;
+		}
+	}
+  .columns{
+    margin-top: 2em;
+    .heading{
+      margin-bottom: .5em;
+    }
+    a{
+      color: $black;
+      text-decoration: underline;
+      &:hover{
+        color: $red;
+      }
+    }
+  }
+  .vines, .featured-floater{
+  	content: '';
+  	position: absolute;
+  	height: 100%;
+  	width: 10em;
+  	background-size: contain;
+  	background-repeat: no-repeat;
+  	top: 0;
+    pointer-events: none;
+  }
+  @media (min-width: 768px){
+    .panel-content{
+      margin-bottom: 6em;
+    }
+  }
+  @media (min-width: 900px){
+    .vines{
+      &.top{
+        background-image: url('../img/vines/About_Hero_Top.png');
+        width: 80em;
+        height: 32em;
+        top: -16em;
+        left: 50%;
+        transform: translateX(-34%);
+      }
+      &.right{
+        background-image: url('../img/vines/what-is/Section-Process-Vines-RightBottom.png');
+        width: 13em;
+        height: 35em;
+        top: 0em;
+        right: 0;
+      }
+      &.left{
+        background-image: url('../img/vines/what-is/SectionProcess-Vines-Left.png');
+        width: 7em;
+        height: 35em;
+        top: 0em;
+        left: 0;
+      }
+    }
+  }
+  @media (min-width: 1200px){
+    .panel-image{
+      // max-height: 430px;
+    }
+  }
+}
+
+section + .mx-panel-sec{
+  padding: 4em 0;
+  #intro-vines{
+    display: none;
+  }
+  .vines{
+    &.top{
+      display: none;
+    }
+  }
+}
+
+.what-is-intro{
+  padding-top: 10em;
+  .vines.left{
+    background-image: url('../img/vines/what-is/Hero-Left-Vines.png');
+    width: 12em;
+    height: 55em;
+    top: -33em;
+    left: 0;
+  }
+  .vines.right{
+    background-image: none;
+  }
+  video{
+      display: none;
+  }
+  @media (min-width: 768px){
+    .featured-floater{
+      background-image: url('../img/vines/what-is/Hero-Illustration-Right.png');
+      width: 44em;
+      height: 42em;
+      top: 0;
+      right: 0;
+    }
+    video{
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 61%;
+        z-index: -1;
+        max-width: 53em;
+    }
+  }
+  @media (min-width: 1200px){
+      .featured-floater{
+          width: 50em;
+      }
+  }
+  @media (min-width: 1440px){
+    .vines.left{
+      top: -2em;
+    }
+  }
+}
+
+.kombucha-origins{
+  @media (min-width: 768px){
+    .vines.right{
+      background-image: url('../img/vines/what-is/Section-KombuchaOrigin-Vines-Right.png');
+      width: 7em;
+      height: 35em;
+      top: 0em;
+      right: 0;
+    }
+    .vines.left{
+      background-image: none;
+    }
+  }
+}
+
+.mx-panel-sec.process{
+  @media (min-width: 1350px){
+    .vines.left{
+      background-image: url('../img/vines/what-is/SectionProcess-Vines-Left.png');
+      width: 7em;
+      height: 35em;
+      top: 0em;
+      left: 0;
+    }
+    .vines.right{
+      background-image: none;
+    }
+  }
+}
+.fermentation{
+  .vines.left{
+    background-image: none;
+  }
+    .featured-floater{
+        background-image: url('../img/vines/what-is/FermentationFrenzy_Left.png');
+        width: 17em;
+        height: 16em;
+        top: 0em;
+        left: 0;
+        @media (min-width: 768px){
+            display: none;
+            // width: 20em;
+            // height: 20em;
+        }
+        // @media (min-width: 992px){
+        //     width: 34em;
+        //     height: 32em;
+        //     top: 6em;
+        // }
+    }
+    article{
+        padding-top: 10em;
+        @media (min-width: 768px){
+            padding-top: 0;
+        }
+    }
+    video{
+        display: none;
+        @media (min-width: 768px){
+            display: block;
+            position: absolute;
+            z-index: -1;
+        }
+        &#fermentation-vines{
+            right: 0;
+            top: 6em;
+            height: 33em;
+            width: 9em;
+        }
+        &#orange-animation{
+            left: -8em;
+            top: 4em;
+            height: 27em;
+            width: 33em;
+            @media (min-width: 992px){
+                left: 0;
+                // height: 30em;
+                // width: 34em;
+            }
+        }
+    }
+}
+
+.contact-intro{
+  padding-top: 18em;
+  .featured-floater{
+      background-image: url('../img/vines/contact/Mobile-Hero-Contact.png');
+      width: 100%;
+      height: 25em;
+      top: 0;
+      left: 0;
+  }
+  @media (min-width: 768px){
+      padding-top: 10em;
+      .vines.left{
+          background-image: url('../img/vines/contact/Contact-Hero-Vines-Left.png');
+          width: 12em;
+          height: 55em;
+          top: -30em;
+          left: 0;
+      }
+    .featured-floater{
+      background-image: url('../img/vines/contact/Contact-Hero-Illustration-Right.png');
+      width: 35em;
+      height: 42em;
+      top: 0;
+      right: 0;
+      left: auto;
+
+    }
+  }
+  @media (min-width: 1335px){
+    .vines.left{
+      top: -2em;
+    }
+  }
+  @media (min-width: 1200px){
+    .featured-floater{
+      width: 45em;
+    }
+  }
+}
+
+.taste-section{
+    .panel-content{
+        margin-top: 0;
+    }
+    @media (min-width: 768px){
+        .panel-content{
+            margin-left: 0;
+            margin-top: 6em;
+        }
+        .panel-image{
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+        .vines.left{
+          background-image: url('../img/vines/glh/GLH_Info_Vines_Left.png');
+          width: 15em;
+          height: 38em;
+          top: -2em;
+          left: 0;
+        }
+    }
+}
