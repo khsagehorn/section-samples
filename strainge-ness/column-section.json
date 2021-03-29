@@ -1,0 +1,89 @@
+{
+  "id": "feature",
+  "label": "Feature Columns",
+  "description": "Show content with image justified right or left. Use special layouts for custom designs.",
+  "fields": [
+    "legend:Options",
+    [{
+        "name": "section_class",
+        "type": "select",
+        "label": "Special Layouts",
+        "options": {
+          "contact-intro": "Contact Intro",
+          "what-is-intro": "What Is Intro",
+          "fermentation": "Fermentation Intro",
+          "process": "Our Ingredients",
+          "taste-section": "Taste Section"
+        },
+        "default": "white",
+        "description": "This will add a class to the section for special styles."
+      },
+      {
+        "name": "theme",
+        "type": "select",
+        "label": "Theme",
+        "options": {
+          "white": "White Background"
+        },
+        "default": "white"
+      },
+      {
+        "name": "position",
+        "type": "select",
+        "label": "Position",
+        "options": {
+          "left": "Image On Left",
+          "right": "Image On Right"
+        },
+        "default": "left"
+      }
+    ],
+    [{
+        "name": "border",
+        "type": "checkbox",
+        "label": "Apply Image Border?",
+        "default": "unchecked"
+      },
+      {
+        "name": "fluid",
+        "type": "checkbox",
+        "label": "Anchor Image to browser window?",
+        "default": "unchecked"
+      }
+    ],
+    [{
+        "name": "margin",
+        "type": "checkbox",
+        "label": "Apply Negative Top Margin?",
+        "default": "unchecked"
+      },
+      {
+        "name": "swap",
+        "type": "checkbox",
+        "label": "Swap Header and Eyebrow Positions?",
+        "default": "unchecked"
+      }
+    ],
+    "legend:Content",
+    ["label", "header"],
+    ["image", "icon"],
+    {
+      "name": "video_animation",
+      "type": "video",
+      "label": "Animation Video Override",
+      "description": "You can choose a specific video to replace the one shown when using the custom layouts above"
+    },
+    ["textarea:body"],
+    {
+      "name": "columns",
+      "type": "blocks",
+      "label": "Content Columns",
+      "limit": "3",
+      "fields": [
+        "header",
+        "textarea:body"
+      ]
+    },
+    ["cta"]
+  ]
+}
