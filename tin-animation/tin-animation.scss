@@ -1,0 +1,71 @@
+.product-form{
+	.tin-images{
+		position: relative;
+		padding-top:50px;
+		#mint{
+			display: none;
+			position: absolute;
+			top: 50px;
+			transform-origin: center;
+			z-index: 3;
+			opacity: 0;
+			@include media-breakpoint-up(md){
+				display: block;
+				width: 225px;
+				left: 15%;
+			}
+			@include media-breakpoint-up(lg){
+				width: 255px;
+				left: 20%;
+			}
+			@include media-breakpoint-up(xl){
+				width: 255px;
+				left: 25%;
+			}
+			&.hide{
+				opacity: 1;
+			}
+		}
+		.product-single-images{
+			position: relative;
+		}
+		.sequence-wrap {
+			position: relative;
+			top: -6em;
+			width: 300px;
+			height: 660px;
+			background-image: url('tin_spritesheet.png');
+			background-repeat: no-repeat;
+			background-position: 0 50%;
+			margin: 0 auto;
+		}
+		.tin-mask{
+			position: absolute;
+			background-image: url('tin-mask.png');
+			background-position: bottom;
+			background-size: contain;
+			background-repeat: no-repeat;
+			width: 270px;
+	    height: 600px;
+	    left: calc(50% - 6px);
+	    transform: translateX(-50%);
+	    top: -72px;
+			z-index: 4;
+			opacity: 0;
+			&.hide{
+				opacity: 1;
+			}
+		}
+		.tin-shadow{
+			position: absolute;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: contain;
+			width: 440px;
+	    height: 100px;
+	    bottom: 140px;
+	    left: 56px;
+	    z-index: 0;
+		}
+	}
+}
