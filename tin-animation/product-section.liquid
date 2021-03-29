@@ -1,0 +1,31 @@
+<section class=' page-section-product' id="mints" data-variant-title="{{selected.title | downcase | replace: ' ', '-'}}">
+	{% for variant in product.variants %}
+		{% liquid
+			assign slug = variant.title | downcase | replace: ' ', '-'
+			assign header_image = 'product-header-' | append: slug | append : '.png'
+			assign footer_image = 'product-footer-' | append: slug | append : '.png'
+		%}
+		<img src="{{ header_image | asset_url }}" alt="product header" class = 'product-header {% if variant.id == selected.id %} active {% endif%}' data-variant-id = '{{variant.id}}' />
+		<img src="{{ footer_image | asset_url }}" alt="product footer" class = 'product-footer {% if variant.id == selected.id %} active {% endif%}' data-variant-id = '{{variant.id}}' />
+	{% endfor %}
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 tin-images">
+				<figure id="mint" class="mint">
+					<img src="{{ 'mint_new.png' | asset_url }}" alt="mint detail">
+				</figure>
+				{% render "product-image-sequence" product:product %}
+				{% render "product-single-images" product:product %}
+				<p class="small-copy text-center text-black d-inline-block d-md-none w-100">
+					<a  class = 'text-black' data-toggle="modal" data-target="#modal--nutrition" href="#modal--nutrition" > See the Full Nutrition Information </a>
+				</p>
+			</div>
+			<div class="col-md-6">
+				{% render 'product-single-form' product:product %}
+				<p class="small-copy text-center text-black d-none d-md-inline-block w-100">
+					<a class = 'text-black nutrition-link' data-toggle="modal" data-target="#modal--nutrition" href="#modal--nutrition" >	See the Full Nutrition Information  </a>
+				</p>
+			</div>
+		</div>
+	</div>
+</section>
