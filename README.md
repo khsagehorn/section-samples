@@ -1,2 +1,2 @@
 # section-samples
-A collection of sections from projects I have built
+A collection of sections I'm happy with.
