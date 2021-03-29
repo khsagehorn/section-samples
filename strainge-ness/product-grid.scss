@@ -1,0 +1,198 @@
+.shopify-section{
+    .collection{
+        position: relative;
+        .container{
+            margin-top: 10em;
+            .body{
+                margin-bottom: 6em;
+            }
+        }
+    }
+}
+
+.product-grid-item{
+    display: flex;
+    flex-direction: column;
+    padding: 0 1em;
+    .product__name{
+        color: $black;
+    }
+    .product__content{
+        position: relative;
+        margin-top: 3em;
+        &:before{
+            content: '';
+            position: absolute;
+            height: 7em;
+            top: -5em;
+            width: 100%;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-image: url('../img/Underscore_3.png');
+        }
+    }
+    &__image{
+        text-align: center;
+        display: flex;
+        height: 14em;
+        margin: auto auto 4em auto;
+        position: relative;
+        img{
+            margin-top: auto;
+        }
+    }
+    &__price{
+        margin-top: 1em;
+    }
+    .view{
+      position: absolute;
+      top: -10%;
+      opacity: 0;
+      background-color: $black;
+      border-radius: 3em;
+      color: white;
+      font-family: $gill, sans-serif;
+      text-transform: uppercase;
+      font-weight: 700;
+      padding: .25em 1em;
+      transition: all .2s ease;
+      transform: translateX(-50%);
+      left: 50%;
+      min-width: 12em;
+    }
+    .leaves{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 20em;
+      opacity: 0;
+      overflow: hidden;
+      transition: opacity .15s ease;
+      & > *{
+        position: absolute;
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 25px;
+        height: 25px;
+        top: 0;
+        opacity: 0;
+      }
+      .leaf__1{
+        left: 15%;
+      }
+      .leaf__2{
+        left: 35%;
+      }
+      .leaf__3{
+        left: 47%;
+      }
+      .leaf__4{
+        left: 70%;
+      }
+    }
+    &:hover{
+      .view{
+        top: 50%;
+        opacity: 1;
+      }
+      .leaves{
+        opacity: 1;
+      }
+      .leaf__1{
+        animation: leaf__1;
+        animation-duration: 1.8s;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-out;
+      }
+      .leaf__2{
+        animation: leaf__2;
+        animation-duration: 2s;
+        animation-iteration-count: 1;
+      }
+      .leaf__3{
+        animation: leaf__3;
+        animation-duration: 1.7s;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-in-out;
+      }
+      .leaf__4{
+        animation: leaf__4;
+        animation-duration: 2.2s;
+        animation-iteration-count: 1;
+      }
+    }
+}
+
+@keyframes leaf__1 {
+  0%{
+    transform: rotate(0);
+    top: -10%;
+    opacity: 0
+  }
+  15%{
+    // transform: rotate(10deg);
+    // top: 70%;
+    opacity: 1;
+  }
+  100%{
+    transform: rotate(-60deg);
+    top: 110%;
+    opacity: 1;
+  }
+
+}
+@keyframes leaf__2 {
+  0%{
+    transform: rotate(0);
+    top: -10%;
+    opacity: 0
+  }
+  15%{
+    // transform: rotate(-10deg);
+    // top: 60%;
+    opacity: 1;
+  }
+  100%{
+    transform: rotate(-120deg);
+    top: 110%;
+    opacity: 1;
+  }
+
+}
+@keyframes leaf__3 {
+  0%{
+    transform: rotate(0);
+    top: -10%;
+    opacity: 0
+  }
+  12%{
+    // transform: rotate(20deg);
+    // top: 80%;
+    opacity: 1;
+  }
+  100%{
+    transform: rotate(120deg);
+    top: 110%;
+    opacity: 1;
+  }
+
+}
+@keyframes leaf__4 {
+  0%{
+    transform: rotate(0);
+    top: -10%;
+    opacity: 0
+  }
+  15%{
+    // transform: rotate(-10deg);
+    // top: 40%;
+    opacity: 1;
+  }
+  100%{
+    transform: rotate(-120deg);
+    top: 110%;
+    opacity: 1;
+  }
+
+}
