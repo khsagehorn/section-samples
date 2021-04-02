@@ -1,0 +1,106 @@
+{% assign data = section.settings %}
+{% include "page-section-hero-basic" data:data %}
+
+{% schema %}
+{
+	"class" : "page-explore-hero-basic",
+	"presets" : [{
+		"name" : "Hero Basic",
+		"category" : "Explore Page"
+	}],
+	"settings" : [
+		{
+			"type": "image_picker",
+			"id": "background_image",
+			"label": "Background Image"
+		},
+		{
+			"type": "select",
+			"id": "text_align",
+			"label": "Text Alignment",
+			"default": "left",
+			"options": [
+				{
+					"value": "left",
+					"label": "Left"
+				},
+				{
+					"value": "center",
+					"label": "Center"
+				}
+			]
+		},
+		{
+			"type": "text",
+			"id": "label",
+			"label": "Label",
+			"default": "Lorum Ipsum"
+		},
+		{
+			"type": "text",
+			"id": "header",
+			"label": "Header",
+			"default": "Dolor Sit Amet"
+		},
+		{
+			"type": "text",
+			"id": "sub_header",
+			"label": "Sub Header",
+			"default": "Dolor Sit Amet"
+		},
+		{
+			"type": "text",
+			"id": "location_tooltip",
+			"label": "Location Tooltip"
+		},
+		{
+			"type": "select",
+			"id": "tooltip_position",
+			"label": "Tooltip Position",
+			"default": "right",
+			"options": [
+				{
+					"value": "left",
+					"label": "Left"
+				},
+				{
+					"value": "right",
+					"label": "Right"
+				}
+			]
+		},
+		{
+			"type": "text",
+			"id": "link_text",
+			"label": "Link Label"
+		},
+		{
+			"type": "url",
+			"id": "link_url",
+			"label": "Link Url"
+		},
+		{
+			"type": "select",
+			"id": "link_theme",
+			"label": "Link Theme",
+			"default": "green",
+			"options": [
+				{
+					"value": "green",
+					"label": "Green"
+				},
+				{
+					"value": "blue",
+					"label": "Blue"
+				},
+				{
+					"value": "blue-light",
+					"label": "Light Blue"
+				}
+			]
+		}
+	
+	]
+}
+
+{% endschema %}
