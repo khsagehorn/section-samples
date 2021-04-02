@@ -1,0 +1,57 @@
+{% if data.label != blank %} {% assign label = data.label%} {% endif %}
+{% if data.header != blank %} {% assign header = data.header%} {% endif %}
+{% if data.sub_header != blank %} {% assign sub_header = data.sub_header%} {% endif %}
+
+{% if data.link_url != blank %} {% assign link_url = data.link_url%} {% endif %}
+{% if data.link_text != blank %} {% assign link_text = data.link_text%} {% endif %}
+{% if data.link_theme != blank %} {% assign link_theme = data.link_theme%} {% endif %}
+
+{% if data.text_align != blank %} {% assign text_align = data.text_align%} {% endif %}
+
+
+{% if data.background_image != blank %}
+	{% assign background_image = data.background_image%}
+	{% unless filter_images == false %}
+		{% if background_image != blank %}
+			{% assign background_image = background_image | img_url : '1900x'%}
+		{% endif %}
+	{% endunless  %}
+{% endif %}
+
+{% if data.location_tooltip != blank %} {% assign location_tooltip = data.location_tooltip%} {% endif %}
+{% if data.tooltip_position != blank %} {% assign tooltip_position = data.tooltip_position%} {% endif %}
+
+
+<section class = 'page-section-hero-basic  '
+{% if background_image != blank %} style="background-image:url( {{ background_image }})" {% endif %} >
+	<div class="background-top"></div>
+	<!-- <div class="background-bottom"></div> -->
+	<div class = 'container   '>
+		<div class="row">
+			<div class = '{% if text_align == 'center' %} offset-sm-2 offset-md-2  offset-lg-3  col-lg-6  {% else %}  col-xl-6  {% endif %} col-sm-7 col-md-8' >
+				{% if label != blank %}
+				<h5 class = 'display-8'>{{label}}</h5>
+				{% endif %}
+				{% if header != blank %}
+				<h1 class = 'display-1'>{{header}}</h1>
+				{% endif %}
+				{% if sub_header != blank %}
+					<p class = 'display-8'>{{sub_header}}</p>
+				{% endif %}
+				{% include 'partial-cta'
+					link_url : link_url
+					link_text : link_text
+					link_theme: link_theme  %}
+
+			</div>
+		</div>
+	</div>
+	<div class="offset-image"></div>
+	{% if location_tooltip != blank %}
+		<div class="location-tooltip {{ tooltip_position }} ">
+			<span class="icon icon-locator"></span>
+			<p class="btn">{{ location_tooltip }}</p>
+		</div>
+	{% endif %}
+</section>
+
