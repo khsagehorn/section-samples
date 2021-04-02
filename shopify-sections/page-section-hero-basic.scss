@@ -1,0 +1,50 @@
+.page-section-hero-basic{
+	position: relative;
+	background-position: bottom right;
+	background-repeat: no-repeat;
+	background-size: contain;
+	min-height: 60vh;
+	display: flex;
+	justify-content: center;
+	height: 95vw;
+	width: 100vw;
+	background-color: transparent;
+	@include media-breakpoint-up(lg){
+		height: 69vw;
+	}
+	* {
+		color:$white
+	}
+	.background-top{
+		content: '';
+    position: absolute;
+    width: 100vw;
+    height: 68vw;
+    left: 0;
+		background: $blue;
+    top: 0;
+    z-index: -1;
+		@include media-breakpoint-up(lg){
+			background: linear-gradient(to bottom,$blue 50%,$blue-very-light);
+			height: 39.35vw;
+			background: $blue;
+		}
+	}
+	.background-bottom{
+		content: '';
+    position: absolute;
+    width: 100vw;
+    height: 49vh;
+    left: 0;
+    bottom: 0;
+    background-color: $blue-light;
+    z-index: 0;
+	}
+	.container{
+		padding-top: 5em;
+		@include media-breakpoint-up(lg){
+			padding-top: 9em;
+		}
+	}
+	
+}
