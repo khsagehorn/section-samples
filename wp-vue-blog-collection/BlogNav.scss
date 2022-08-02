@@ -1,0 +1,341 @@
+.blog-navigation {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 45px;
+  left: 0;
+  z-index: $headerIndex;
+  overflow-x: auto;
+  padding: 0 5px;
+  width: 100%;
+  height: 40px;
+  background-color: $lighterBeige;
+  justify-content: flex-start;
+  text-align: center;
+  opacity: 1;
+  border-bottom: 1px solid rgba($gray, .1);
+  transition: opacity .4s ease, background-color .4s ease;
+
+  &__nav {
+    flex: 1 0 auto;
+    display: flex;
+  }
+
+  &__links {
+    &--desktop {
+      display: none;
+    }
+
+    &--mobile {
+      position: fixed;
+      height: 0;
+      width: 100vw;
+      top: 85px;
+      left: 0;
+      z-index: 0;
+      background-color: $lighterBeige;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0 50px;
+      border-top: 1px solid rgba($gray, .1);
+      transition: height .6s ease;
+
+      .blog-navigation__link {
+        font-size: 12px;
+        margin-top: 30px;
+        opacity: 0;
+        transition: opacity .3s ease;
+        transition-delay: .2s;
+      }
+
+
+      &.nav-open {
+        height: 100vh;
+
+        .blog-navigation__link {
+          opacity: 1;
+        }
+
+      }
+    }
+
+    &.nuxt-link-exact-active {
+      text-decoration: underline;
+    }
+
+  }
+
+  &__link {
+    margin: 0 10px;
+    color: $gray;
+    @include subnav;
+
+    &.nuxt-link-exact-active {
+      padding-bottom: 1px;
+      border-bottom: 1px solid $gray;
+    }
+
+    &:first-of-type {
+      &.nuxt-link-exact-active {
+        border-bottom: 0px;
+      }
+    }
+  }
+
+  .nav-trigger {
+    display: block;
+    position: relative;
+    &:after {
+      content: '';
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      background-image: url('../../assets/icons/icon-chevron.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      transform: rotate(270deg);
+      top: -2px;
+      right: -20px;
+    }
+  }
+
+  & + * {
+    margin-top: 0;
+  }
+
+  @include breakpoint($tabletLandscape) {
+    justify-content: center;
+
+    &__links {
+      &--desktop {
+        display: block;
+      }
+
+      &--mobile {
+        display: none;
+      }
+    }
+
+    &__link {
+      &:first-of-type {
+        position: absolute;
+        left: 30px;
+        margin: 0;
+        line-height: 2;
+      }
+    }
+
+    .nav-trigger {
+      display: none;
+    }
+  }
+
+  @include breakpoint($desktop) {
+
+    &__link {
+      &:first-of-type {
+        left: 60px;
+      }
+    }
+  }
+
+  @include breakpoint($desktop1350) {
+    top: 60px;
+  }
+
+}
+
+.search-trigger {
+  position: absolute;
+  right: 15px;
+  background-image: url('../../assets/icons/search.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 25px;
+  width: 25px;
+  height: 25px;
+
+  &--close {
+    position: absolute;
+    top: 0;
+    right: 15px;
+    @include h5;
+    font-size: 40px !important;
+    transform: rotate(45deg);
+    color: $gray;
+  }
+
+  @include breakpoint($tabletLandscape) {
+    right: 30px;
+  }
+
+  @include breakpoint($desktop) {
+    right: 60px;
+
+    &--close {
+      font-size: 60px;
+      right: 60px;
+    }
+  }
+}
+
+.component--blog-search {
+  position: fixed;
+  left: 0;
+  top: 45px;
+  height: auto;
+  width: 100vw;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 30px;
+  max-width: none;
+  background-color: $lighterBeige;
+  opacity: 0;
+  transition: opacity .3s ease;
+  display: none;
+
+  .search-form {
+    position: relative;
+    margin: 0 auto;
+    max-width: 500px;
+    padding-top: 100px;
+
+    &__input {
+      border: 1px solid #aaa;
+      background-color: $lighterBeige;
+      font-size: 22px;
+      padding-left: 30px;
+      padding-right: 30px;
+      height: 40px;
+      margin-left: 0;
+      margin-right: 0;
+      &::placeholder {
+        color: $gray !important;
+        opacity: 1;
+      }
+      &:focus-visible {
+        outline: 0px !important;
+      }
+    }
+
+    .search-button.close {
+      display: none;
+    }
+  }
+
+  .search-button{
+    position: absolute;
+    width: 50px;
+    height: 35px;
+    background: transparent;
+    right: 30px;
+    top: 0;
+    color: $gray;
+
+    @include breakpoint($desktop) {
+      height: 50px;
+      right: 40px;
+    }
+    &.search{
+      background-image: url('../../assets/icons/search.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 25px;
+      top: 100px;
+      right: 15px;
+    }
+    &.close{
+      @include h5;
+      font-size: 30px !important;
+      transform: rotate(45deg);
+      @include breakpoint($desktop) {
+        font-size: 60px;
+      }
+    }
+  }
+
+  .dropdown-content {
+    display: block;
+    position: relative;
+    background-color: $lighterBeige;
+    min-width: 248px;
+    width: 100%;
+    padding: 15px 20px 20px 0;
+    top: 0;
+    width: 100%;
+    max-width: calc(100% - 40px);
+    max-height: 600px;
+    overflow: hidden;
+    text-align: left;
+    z-index: 0;
+
+    .dropdown-item {
+      font-size: 15px;
+      line-height: 30px;
+      font-family: $sansSerifLight;
+      letter-spacing: 0px;
+      text-transform: capitalize;
+      color: $gray;
+      padding: 6px 0;
+      text-decoration: none;
+      display: block;
+      padding-left: 25px;
+      cursor: pointer;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  &.nav-open {
+    opacity: 1;
+    display: block;
+  }
+
+  @include breakpoint($tablet) {
+    .component--blog-search {
+      .search-form {
+        max-width: 650px;
+        &__input {
+        }
+      }
+    }
+  }
+
+  @include breakpoint($tabletLandscape) {
+
+    .search-form {
+      max-width: 750px;
+      &__input {
+      }
+    }
+
+    .dropdown-content {
+      max-height: 100px;
+    }
+  }
+
+  @include breakpoint($desktop) {
+    padding-bottom: 60px;
+
+    .search-form {
+      &__input {
+        height: 50px;
+      }
+    }
+
+    .dropdown-content {
+      padding: 0 50px 40px 0;
+      top: 10px;
+      max-height: 200px;
+      .dropdown-item {
+        font-size: 18px;
+      }
+    }
+  }
+
+  @include breakpoint($desktop1350) {
+    top: 60px;
+  }
+}
