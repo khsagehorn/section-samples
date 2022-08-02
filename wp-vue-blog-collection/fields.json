@@ -1,0 +1,121 @@
+{
+  "group": {
+    "name": "blog_landing_fields",
+    "title": "Blog Landing Page Fields"
+  },
+  "fields": [
+    {
+      "name": "blog_landing_hero",
+      "label": "Landing Page Hero",
+      "type": "group",
+      "layout": "block",
+      "sub_fields": [
+        {
+          "name": "clone_blog_landing_hero",
+          "label": "Blog Landing Hero",
+          "type": "clone",
+          "clone": ["group_blog_landing_hero"]
+        }
+      ]
+    },
+    {
+      "label": "Blog Landing Page Components",
+      "name": "blog_landing_components",
+      "type": "flexible_content",
+      "layouts": [
+        {
+          "name": "featured_blog_slider",
+          "label": "Featured Blog Slider",
+          "display":  "block",
+          "sub_fields": [
+            {
+              "name": "featured_blog_slider",
+              "label": "Featured Blog Slider",
+              "type": "clone",
+              "clone": [
+                "group_featured_blog_slider"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "spotlight_slider",
+          "label": "Spotlight Slider",
+          "display":  "block",
+          "sub_fields": [
+            {
+              "name": "spotlight_slider",
+              "label": "Spotlight Slider",
+              "type": "clone",
+              "clone": [
+                "group_spotlight_slider"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "blog_featured_three_column",
+          "label": "Three Column Featured Posts",
+          "display":  "block",
+          "sub_fields": [
+            {
+              "name": "blog_featured_three_column",
+              "label": "Three Column Featured Posts",
+              "type": "clone",
+              "clone": [
+                "group_blog_featured_three_column"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "blog_featured_two_column",
+          "label": "Two Column Featured Posts",
+          "display":  "block",
+          "sub_fields": [
+            {
+              "name": "blog_featured_two_column",
+              "label": "Two Column Featured Posts",
+              "type": "clone",
+              "clone": [
+                "group_blog_featured_two_column"
+              ]
+            }
+          ]
+        }
+      ],
+      "display": "seamless",
+      "button_label": "Add Component"
+    },
+    {
+      "name": "no_results_copy",
+      "label": "No Reults Copy",
+      "instructions": "Copy to display when no search results are found.",
+      "type": "wysiwyg"
+    },
+    {
+      "name": "blog_related_slider",
+      "label": "Related Posts Section",
+      "instructions": "Choose posts to display when no search results are found.",
+      "type": "group",
+      "layout": "block",
+      "sub_fields": [
+        {
+          "name": "blog_related_slider",
+          "label": "Related Posts Section",
+          "type": "clone",
+          "clone": ["group_blog_related_slider"]
+        }
+      ]
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "page_template",
+        "operator": "==",
+        "value": "template/template-blog-landing.php"
+      }
+    ]
+  ]
+}
