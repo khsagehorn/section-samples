@@ -1,5 +1,13 @@
 # Section Samples
 
+##wp-vue-blog-collection
+
+A Vue component for a blog collection page featuring a searchbar the allowed dynamic filtering of the post list by fuzzy-matching search terms to post content. Includes a dropdown of search suggestions based on post tags provided in the CMS, which is a neat feature. Worked pretty well, and is still in use at [https://www.nemacolin.com/experiences/all](https://www.nemacolin.com/experiences/all).
+
+## strainge-beast-homepage
+
+A website introducing a new line for a beverage brand. I built a custom Wordpress theme that featured lots of lively animations that triggered on different interactions. This directory includes the PHP homepage file, styles, JavaScript handling animation states, and some of the CMS entry schema.
+
 
 ## wine-list
 
